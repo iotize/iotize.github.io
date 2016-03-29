@@ -1,6 +1,6 @@
-# Released under MIT License
+Applies to software contained in this repo. Content licensed to Ryan Davies under the Creative Commons Attribution 4.0 license: http://creativecommons.org/licenses/by/4.0/
 
-Copyright (c) 2013 Mark Otto.
+"Poole" copyright (c) 2013 Mark Otto.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
