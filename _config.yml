@@ -2,11 +2,15 @@
 permalink:           pretty
 
 # Setup
-title:               Poole
-tagline:             The Jekyll Butler
-url:                 http://getpoole.com
+title:               Ryan Davies
+tagline:             iOS & web developer from the sunny UK.
+url:                 http://ryanjdavies.com
 paginate:            1
 baseurl:             ""
+pages_list:       
+  About:   '/about'
+  Archive: '/archive'
+  Feed:    '/atom.xml'
 
 # Assets
 #
@@ -17,14 +21,12 @@ sass:
 
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Ryan Davies
+  url:               https://twitter.com/iotize
+  email:             mail@ryanjdavies.com
 
 # Custom vars
-version:             2.0.0
-github:
-  repo:              https://github.com/poole/poole
+github:				 https://github.com/iotize
 
 # Gems
 gems:
