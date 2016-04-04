@@ -3,28 +3,23 @@ layout: page
 title: About
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+<img src="{{ baseurl }}/assets/me.jpg">
 
-In the novel, *The Strange Case of Dr. Jekyll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+I'm a developer living in London. I work on iOS and OS X projects written in Objective-C, Swift, and C++. I also dabble in web technologies like Ruby on Rails.
 
-There are currently two themes built on Poole:
+You can find me [on Twitter](https://twitter.com/iotize) and [on GitHub](https://github.com/iotize).
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+I joined [Alcorn McBride](http://alcorn.com) in 2009 as the lead developer on their iOS products, first working on native iPhone and iPad apps, and later porting existing Windows products to OS X and iOS. I had the opportunity to work with new technologies such as iBeacons and Apple Watch.
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+In 2013, I interned with [Pocket App](https://pocketapp.co.uk) and had the opportunity to build several iPhone apps for different clients.
 
-## Setup
+After that, I graduated from the [University of Surrey](http://surrey.ac.uk) with a BSc in Computing.
 
-Some fun facts about the setup of this project include:
+Here are a few projects I've helped build:
 
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
+- ShowTouch iBeacon Support
+- ShowWatcher
+- FriendChain
+- Holla@Me
+- Argos iBeacon Demo
+- VGAMR ?
