@@ -16,9 +16,9 @@ disqus: false
 disqus_shortname: 'your-disqus-shortname'
 
 # Details for the RSS feed generator
-url:            'http://your-blog-url.example.com'
-author:         'Your Name'
-authorTwitter:  'YourTwitterUsername'
+url:            'http://ryanjdavies.com'
+author:         'Ryan Davies'
+authorTwitter:  'iotize'
 
 permalink:       /:year/:title/
 
