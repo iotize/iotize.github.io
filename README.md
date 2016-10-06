@@ -2,7 +2,7 @@
 
 ## Thanks
 
-All of the theming work has been already done by the authors of the [Cactus](https://github.com/nickbalestra/kactus) project.
+All of the theming work has been already done by the authors of the [Kactus](https://github.com/nickbalestra/kactus) project.
 
 ## Copyright & License
 
