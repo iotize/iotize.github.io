@@ -16,11 +16,11 @@ Rendering UIKit Content
 
 When you apply a blur effect on an image in your image editor it works by performing a complex algorithm on each pixel and its surrounding pixels. iOS is no exception - in order to create a blur effect, we need to create a bitmap image from the view hierarchy we have on screen.
 
-CALayer, the workhorse for each view, has had the -renderInContext: method since iOS 2.0. It renders itself and all sublayers into a graphics context that can then have any effects applied to it before being converted into an image for display.
+`CALayer`, the workhorse for each view, has had the `-renderInContext:` method since iOS 2.0. It renders itself and all sublayers into a graphics context that can then have any effects applied to it before being converted into an image for display.
 
-Unfortunately, as it runs in the CPU, -renderInContext: can be incredibly slow for complex hierarchies. It also doesn't take any view transforms into account.
+Unfortunately, as it runs in the CPU, `-renderInContext:` can be incredibly slow for complex hierarchies. It also doesn't take any view transforms into account.
 
-Thankfully Apple introduced new methods on UIView in iOS 7 for creating snapshots of view hierarchies:
+Thankfully Apple introduced new methods on `UIView` in iOS 7 for creating snapshots of view hierarchies:
 
 - `snapshotViewAfterScreenUpdates:` - the fastest method for creating still snapshots of a view hierarchy. Returns a `UIView` instance whose layer contents are immutable, which makes it useless for applying blur effects.
 - `resizableSnapshotViewFromRect:afterScreenUpdates:withCapInsets:` - similar to `snapshotViewAfterScreenUpdates:` but with resizable insets.
