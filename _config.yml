@@ -10,7 +10,7 @@ highlighter: rouge
 gems: [jekyll-paginate]
 paginate: 20
 baseurl: /
-domain_name: 'http://yourblog-domain.com'
+domain_name: 'http://ryanjdavies.com'
 google_analytics: 'UA-57241786-2'
 disqus: false
 disqus_shortname: 'your-disqus-shortname'
