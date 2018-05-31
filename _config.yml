@@ -14,3 +14,5 @@ author:         'Ryan Davies'
 authorTwitter:  'iotize'
 
 permalink:       /:year/:title/
+
+theme: jekyll-theme-midnight
