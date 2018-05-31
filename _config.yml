@@ -4,6 +4,7 @@ meta_description: "Ryan Davies, iOS Engineer at notonthehighstreet.com. Blogging
 
 aboutPage: false
 
+theme: minima
 markdown: kramdown
 highlighter: rouge
 
