@@ -12,8 +12,6 @@ gems: [jekyll-paginate]
 paginate: 20
 baseurl: /
 domain_name: 'http://ryanjdavies.com'
-disqus: false
-disqus_shortname: 'your-disqus-shortname'
 
 # Details for the RSS feed generator
 url:            'http://ryanjdavies.com'
