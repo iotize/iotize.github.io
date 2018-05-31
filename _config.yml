@@ -1,7 +1,6 @@
 name: iotize, 📱 engineer
 description: iOS Engineer
 meta_description: ""
-theme: minima
 markdown: kramdown
 highlighter: rouge
 gems: [jekyll-paginate]
