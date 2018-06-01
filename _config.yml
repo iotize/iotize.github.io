@@ -1,8 +1,6 @@
 title: iotize
 description: just trying to get something to build in Xcode
 theme: minima
-gems: [jekyll-paginate]
-paginate: 20
 baseurl: /
 domain_name: 'http://iotize.github.com'
 twitter_username: iotize
