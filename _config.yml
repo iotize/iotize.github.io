@@ -13,7 +13,7 @@ rss: rss
 
 # Details for the RSS feed generator
 url:            'http://iotize.github.com'
-author:         'iotize'
+author:         'Ryan Davies'
 authorTwitter:  'iotize'
 
 permalink:       /:year/:title/
