@@ -1,6 +1,6 @@
 title: iotize
 description: just trying to get something to build in Xcode
-theme: jekyll-theme-dinky
+theme: jekyll-theme-minimal
 baseurl: /
 domain_name: 'http://iotize.github.com'
 twitter_username: iotize
