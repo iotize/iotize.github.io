@@ -8,7 +8,7 @@ struct PersonalWebsite: Website {
         case about
     }
 
-    struct ArticleMetadata: WebsiteItemMetadata {
+    struct ItemMetadata: WebsiteItemMetadata {
       var title: String
       var date: String
     }
