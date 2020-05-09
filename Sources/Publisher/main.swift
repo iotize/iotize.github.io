@@ -1,3 +1,4 @@
+import Foundation
 import Publish
 
 struct PersonalWebsite: Website {
