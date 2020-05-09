@@ -18,4 +18,7 @@ struct PersonalWebsite: Website {
     var imagePath: Path? { "images/logo.png" }
 }
 
-try! PersonalWebsite().publish(withTheme: .foundation)
+try! PersonalWebsite().publish(
+  withTheme: .foundation,
+  deployedUsing: .gitHub("iotize/iotize.github.com")
+)
