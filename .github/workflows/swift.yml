@@ -5,7 +5,19 @@ on:
     branches: [ master ]
 
 jobs:
+  check_skip:
+    runs-on: ubuntu-latest
+    if: |
+      !contains(format('{0} {1} {2}', github.event.head_commit.message, github.event.pull_request.title, github.event.pull_request.body), '[skip ci]')
+    steps:
+      - run: |
+          cat <<'MESSAGE'
+          github.event_name: ${{ toJson(github.event_name) }}
+          github.event:
+          ${{ toJson(github.event) }}
+          MESSAGE
   build:
+    depends-on: check_skip
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
