@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: swift build -v
-    - name: Generate
+    - name: Publish
       run: swift run -v Publisher
     - name: List
       run: ls -lR
