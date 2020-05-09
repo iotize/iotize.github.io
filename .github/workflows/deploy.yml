@@ -14,3 +14,5 @@ jobs:
       run: swift build -v
     - name: Run
       run: swift run -v Publisher
+    - name: List
+      run: ls -lr
