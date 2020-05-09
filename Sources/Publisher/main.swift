@@ -11,7 +11,7 @@ struct PersonalWebsite: Website {
 
     struct ItemMetadata: WebsiteItemMetadata {
       var title: String
-      var date: String
+      var date: String?
     }
 
     var url = URL(string: "http://www.ryanjdavies.com")!
