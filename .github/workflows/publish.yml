@@ -1,11 +1,11 @@
-name: Deploy
+name: Publish
 
 on:
   push:
     branches: [ master ]
 
 jobs:
-  build:
+  publish:
     if: "!contains(format('{0} {1} {2}', github.event.head_commit.message, github.event.pull_request.title, github.event.pull_request.body), '[skip ci]')"
     runs-on: macos-latest
     steps:
