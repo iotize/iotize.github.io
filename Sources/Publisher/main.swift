@@ -8,7 +8,9 @@ struct PersonalWebsite: Website {
         case about
     }
 
-    struct ItemMetadata: WebsiteItemMetadata {
+    struct ArticleMetadata: WebsiteItemMetadata {
+      var title: String
+      var date: String
     }
 
     var url = URL(string: "http://www.ryanjdavies.com")!
