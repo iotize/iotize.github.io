@@ -18,5 +18,3 @@ jobs:
       run: swift build -v
     - name: Publish
       run: swift run -v Publisher --git-hub-token ${{ secrets.GITHUB_TOKEN }}
-    - name: List
-      run: ls -lR
