@@ -20,5 +20,5 @@ struct PersonalWebsite: Website {
 
 try! PersonalWebsite().publish(
   withTheme: .foundation,
-  deployedUsing: .gitHub("iotize/iotize.github.com")
+  deployedUsing: .gitHub("iotize/iotize.github.io")
 )
