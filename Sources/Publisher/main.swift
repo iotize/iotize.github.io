@@ -32,4 +32,4 @@ struct Publisher: ParsableCommand {
     }
 }
 
-try! Publisher.main()
+Publisher.main()
