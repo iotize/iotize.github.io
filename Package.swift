@@ -15,8 +15,8 @@ let package = Package(
         .target(
             name: "Publisher",
             dependencies: [
-                .product(name: "Publish", package: "publish"),
-                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+                "Publish",
+                "ArgumentParser",
             ]
         ),
     ]
