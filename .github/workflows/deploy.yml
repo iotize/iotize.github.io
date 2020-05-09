@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    if: !contains(format('{0} {1} {2}', github.event.head_commit.message, github.event.pull_request.title, github.event.pull_request.body), '[skip ci]')
+    if: "!contains(format('{0} {1} {2}', github.event.head_commit.message, github.event.pull_request.title, github.event.pull_request.body), '[skip ci]')"
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
