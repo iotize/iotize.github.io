@@ -1,4 +1,5 @@
 import Foundation
+import Plot
 import Publish
 
 struct PersonalWebsite: Website {
