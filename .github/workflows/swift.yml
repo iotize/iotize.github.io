@@ -17,7 +17,7 @@ jobs:
           ${{ toJson(github.event) }}
           MESSAGE
   build:
-    depends-on: check_skip
+    needs: check_skip
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
