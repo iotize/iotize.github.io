@@ -8,8 +8,8 @@ let package = Package(
         .executable(name: "Publisher", targets: ["Publisher"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/johnsundell/publish.git", from: "0.1.0"),
-        .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMinor(from: "0.0.1")),
+        .package(name: "Publish", url: "https://github.com/johnsundell/publish.git", from: "0.1.0"),
+        .package(name: "ArgumentParser", url: "https://github.com/apple/swift-argument-parser", .upToNextMinor(from: "0.0.1")),
     ],
     targets: [
         .target(
