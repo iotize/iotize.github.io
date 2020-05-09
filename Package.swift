@@ -16,7 +16,7 @@ let package = Package(
             name: "Publisher",
             dependencies: [
                 .product(name: "Publish", package: "publish"),
-                .priduct(name: "ArgumentParser", package: "swift-argument-parser"),
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ]
         ),
     ]
