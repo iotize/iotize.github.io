@@ -15,4 +15,4 @@ jobs:
     - name: Generate
       run: swift run -v Publisher
     - name: List
-      run: ls -lr
+      run: ls -lR
