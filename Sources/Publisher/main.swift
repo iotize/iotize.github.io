@@ -13,6 +13,7 @@ struct PersonalWebsite: Website {
     var url = URL(string: "http://www.ryanjdavies.com")!
     var name = "Ryan's Website"
     var description = "A website by Ryan."
+    var language: Language { .english }
     var imagePath: Path? { "images/logo.png" }
 }
 
