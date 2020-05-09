@@ -27,8 +27,9 @@ struct Publisher: ParsableCommand {
 
     func run() throws {
         try! PersonalWebsite().publish(
-  withTheme: .foundation,
-  deployedUsing: .git("https://iotize:\(gitHubToken)@github.com/iotize/iotize.github.io.git")
+            withTheme: .foundation,
+            deployedUsing: .git("https://iotize:\(gitHubToken)@github.com/iotize/iotize.github.io.git")
+        )
     }
 }
 
