@@ -21,7 +21,7 @@ jobs:
     - name: Move Files
       run: |
         rm -Rf docs
-        mv -R Output/* .
+        cp -R Output/* .
         rm -Rf Output
     - name: Commit files
       run: |
