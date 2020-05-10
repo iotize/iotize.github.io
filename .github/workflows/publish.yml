@@ -21,7 +21,8 @@ jobs:
     - name: Move Files
       run: |
         rm -Rf docs
-        cp -R Output/* .
+        mv -R Output/* .
+        rm -Rf Output
     - name: Commit files
       run: |
         git config --local user.email "publish.bot@ryanjdavies.com"
