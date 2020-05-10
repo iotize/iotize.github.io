@@ -26,7 +26,8 @@ jobs:
       run: |
         git config --local user.email "publish.bot@ryanjdavies.com"
         git config --local user.name "Publish Bot"
-        git commit -m "Publish deploy" -a
+        git add docs
+        git commit -m "Publish deploy"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
