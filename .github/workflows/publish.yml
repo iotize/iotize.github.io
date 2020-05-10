@@ -21,12 +21,12 @@ jobs:
     - name: Move Files
       run: |
         rm -Rf docs
-        cp -R Output docs
+        cp Output/* .
     - name: Commit files
       run: |
         git config --local user.email "publish.bot@ryanjdavies.com"
         git config --local user.name "Publish Bot"
-        git add docs
+        git add -A
         git commit -m "Publish deploy"
     - name: Push changes
       uses: ad-m/github-push-action@master
