@@ -18,4 +18,16 @@ jobs:
       run: swift build -v
     - name: Generate
       run: swift run -v Publisher
-      
+    - name: Move Files
+      run: |
+        rm -Rf docs
+        cp Output docs
+    - name: Commit files
+      run: |
+        git config --local user.email "publish.bot@ryanjdavies.com"
+        git config --local user.name "Publish Bot"
+        git commit -m "Publish deploy" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
