@@ -1,5 +1,5 @@
 ---
-title:  "Snapshotting and Blurring Views (iOS 7)"
+title: Snapshotting and Blurring Views (iOS 7)
 date: 2014-03-22 17:00
 ---
 
