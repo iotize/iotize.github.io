@@ -1,5 +1,6 @@
 ---
 title:  "Snapshotting and Blurring Views (iOS 7)"
+date: 2014-03-22 17:00
 ---
 
 Apple use an overlaying blur effect throughout iOS 7 to suggest 'depth' to the user, seen in the notification center, control center, and in many of Apple's apps:
