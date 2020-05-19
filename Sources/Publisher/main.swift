@@ -2,6 +2,7 @@ import ArgumentParser
 import Foundation
 import Plot
 import Publish
+import SplashPublishPlugin
 
 struct PersonalWebsite: Website {
     enum SectionID: String, WebsiteSectionID {
@@ -24,7 +25,8 @@ struct PersonalWebsite: Website {
 struct Publisher: ParsableCommand {
     func run() throws {
         try! PersonalWebsite().publish(
-            withTheme: .foundation
+            withTheme: .foundation,
+            plugins: [.splash(withClassPrefix: "classPrefix")]
         )
     }
 }
