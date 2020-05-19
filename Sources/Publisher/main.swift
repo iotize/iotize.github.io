@@ -26,7 +26,7 @@ struct Publisher: ParsableCommand {
     func run() throws {
         try! PersonalWebsite().publish(
             withTheme: .custom,
-            plugins: [.splash(withClassPrefix: "classPrefix")]
+            plugins: [.splash(withClassPrefix: "")]
         )
     }
 }
