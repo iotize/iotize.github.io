@@ -15,7 +15,7 @@ private struct CustomHTMLFactory<Site: Website>: HTMLFactory {
                        context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: index, on: context.site),
+            .head(for: index, on: context.site, stylesheetPaths: ["/styles.css", "/syntax-swift.css"]),
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(
