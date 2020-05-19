@@ -5,7 +5,7 @@ public extension Theme {
     static var custom: Self {
         Theme(
             htmlFactory: CustomHTMLFactory(),
-            resourcePaths: ["assets/css/styles.css"]
+            resourcePaths: ["assets/css/styles.css", "assets/css/syntax-swift.css"]
         )
     }
 }
