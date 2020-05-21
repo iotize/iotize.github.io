@@ -55,11 +55,3 @@ That's it! All that's left is to render the image:
 ![](/assets/images/2014/03/ios-simulator-screen-shot-22-mar-2014-20-30-33.png)
 
 You can see Apple's engineers discuss snapshotting and the iOS 7 blur effect in [WWDC 2013 Session 226](https://developer.apple.com/videos/wwdc/2013/). You can also read about Apple's stance on user interface depth in the [iOS Human Interface Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/MobileHIG/index.html).
-
-
-```
-let something = Something(foo: bar)
-struct Blah {
-	var a: String
-}
-```
