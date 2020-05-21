@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="og:site_name" content="Ryan's Website"/><link rel="canonical" href="http://www.ryanjdavies.com/articles/2020-05-21-simplifying-completion-callbacks"/><meta name="twitter:url" content="http://www.ryanjdavies.com/articles/2020-05-21-simplifying-completion-callbacks"/><meta name="og:url" content="http://www.ryanjdavies.com/articles/2020-05-21-simplifying-completion-callbacks"/><title>Simplifying completion callbacks | Ryan's Website</title><meta name="twitter:title" content="Simplifying completion callbacks | Ryan's Website"/><meta name="og:title" content="Simplifying completion callbacks | Ryan's Website"/><meta name="description" content="A website by Ryan."/><meta name="twitter:description" content="A website by Ryan."/><meta name="og:description" content="A website by Ryan."/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Ryan's Website"/><meta name="twitter:image" content="http://www.ryanjdavies.com/images/logo.png"/><meta name="og:image" content="http://www.ryanjdavies.com/images/logo.png"/></head><body class="item-page"><header><div class="wrapper"><a class="site-name" href="/">Ryan's Website</a><nav><ul><li><a class="selected" href="/articles">Articles</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper"><article><div class="content"><h1>Simplifying completion callbacks</h1><p>It’s commonplace in asynchronous Swift code to have a method return a <code>Result</code> type as an argument to a completion callback. If one of those asynchronous methods calls another, it can require disambiguating the returned <code>Result</code> both in the intermediary layer and at the final call site:</p><pre><code><span class="keyword">struct</span> RegistrationService {
+    <span class="keyword">let</span> marketingPreferencesService: <span class="type">MarketingPreferencesService</span>
+    
+    <span class="keyword">func</span> register(email: <span class="type">String</span>, password: <span class="type">String</span>, subscribe: <span class="type">Bool</span>, completion: <span class="keyword">@escaping</span> (<span class="type">Result</span>&lt;<span class="type">User</span>, <span class="type">Error</span>&gt;) -&gt; <span class="type">Void</span>) {
+        <span class="comment">// register the user</span>
+        <span class="keyword">var</span> user = <span class="type">User</span>(email: email)
+        
+        <span class="comment">// if the user didn't want to subscribe, return early</span>
+        <span class="keyword">if</span> !subscribe {
+            <span class="keyword">return</span> <span class="call">completion</span>(.<span class="call">success</span>(user))
+        }
+        
+        <span class="comment">// if the user did want to subscribe, sign 'em up</span>
+        marketingPreferencesService.<span class="call">subscribe</span>(email: email) { result <span class="keyword">in
+            switch</span> result {
+                <span class="keyword">case</span> .<span class="dotAccess">success</span>:
+                    <span class="call">completion</span>(.<span class="call">success</span>(user))
+                <span class="keyword">case</span> .<span class="dotAccess">failure</span>(<span class="keyword">let</span> error):
+                    <span class="call">completion</span>(.<span class="call">failure</span>(error))
+            }
+        }
+    }
+}
+
+<span class="keyword">let</span> service = <span class="type">RegistrationService</span>(marketingPreferencesService: <span class="type">MarketingPreferencesService</span>())
+service.<span class="call">register</span>(email: <span class="string">"ryan@website.com"</span>, password: <span class="string">"password"</span>, subscribe: <span class="keyword">true</span>) { result <span class="keyword">in
+    switch</span> result {
+    <span class="keyword">case</span> .<span class="dotAccess">success</span>(<span class="keyword">let</span> user):
+        <span class="call">print</span>(user)
+    <span class="keyword">case</span> .<span class="dotAccess">failure</span>(<span class="keyword">let</span> error):
+        <span class="call">print</span>(error)
+    }
+}
+</code></pre><p>In this small example, there are only two switch statements for dealing with the <code>Result</code> type, but in a typical project there could be many types like these that all rely on each other, and that can quickly add up to a whole lot of <code>Result</code> wrangling.</p><p>The final call site would typically have unique behaviour and is harder to generalise. The intermediary calls, though, have a similar pattern. In this case, the call from <code>RegistrationService</code> to <code>marketingPreferencesService</code>:</p><ul><li>Calls the original completion with a different value if the request is successful.</li><li>Passes the error through to the original completion if the request fails.</li></ul><p>This logic can be extracted into a reusable function and used in each service that follows this pattern:</p><pre><code><span class="keyword">func</span> replaceSuccess&lt;Success, NewSuccess, Failure&gt;(with newSuccess: <span class="type">NewSuccess</span>, completion: <span class="keyword">@escaping</span> (<span class="type">Result</span>&lt;<span class="type">NewSuccess</span>, <span class="type">Failure</span>&gt;) -&gt; <span class="type">Void</span>) -&gt; (<span class="type">Result</span>&lt;<span class="type">Success</span>, <span class="type">Failure</span>&gt;) -&gt; <span class="type">Void</span> {
+    { result <span class="keyword">in
+        switch</span> result {
+            <span class="keyword">case</span> .<span class="dotAccess">success</span>:
+                <span class="call">completion</span>(.<span class="call">success</span>(newSuccess))
+            <span class="keyword">case</span> .<span class="dotAccess">failure</span>(<span class="keyword">let</span> error):
+                <span class="call">completion</span>(.<span class="call">failure</span>(error))
+        }
+    }
+}
+</code></pre><p>This function:</p><ol><li>Has two arguments: the first is the value to use for replacing in case of success, and the second is the completion we want to call with the new success or failure when this function is called.</li><li>Returns the same closure type as is expected for any completion callback: it takes a <code>Result</code> and returns <code>Void</code>.</li></ol><p>The switch statement in <code>RegistrationService</code> can be replaced with:</p><pre><code>marketingPreferencesService.<span class="call">subscribe</span>(email: email, completion: <span class="call">replaceSuccess</span>(with: user, completion: completion))
+</code></pre><p>Any other types with a similar approach – in this case, ones that rely on a second asynchronous call for which the result should be ignored – can use the same function. This reduces the amount of code needed, which is a nice improvement, but more importantly it helps to make the approach consistent throughout the codebase.</p></div><span>Tagged with: </span><ul class="tag-list"></ul></article></div><footer><p>Generated using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="/feed.rss">RSS feed</a></p></footer></body></html>
