@@ -1,6 +1,7 @@
 ---
 title: Simplifying completion callbacks
 date: 2020-05-21 22:30
+tags: Swift
 ---
 
 # Simplifying completion callbacks
