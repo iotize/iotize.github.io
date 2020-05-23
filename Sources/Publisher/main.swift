@@ -7,7 +7,6 @@ import SplashPublishPlugin
 struct PersonalWebsite: Website {
     enum SectionID: String, WebsiteSectionID {
         case articles
-        case about
     }
 
     struct ItemMetadata: WebsiteItemMetadata {
