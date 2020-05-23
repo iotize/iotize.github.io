@@ -34,6 +34,6 @@ Adding an image to this directory makes it available to the playground:
 
 That's it! Now it's easy to write snippets for image manipulation or for creating custom views with decoration images to see how they look.
 
-![](/assets/images/2020/05/playground-wtih-image.png)
+![](/assets/images/2020/05/playground-with-image.png)
 
 For more information on resources in playgrounds, see [WWDC 2014 Session 401 "What's New In Xcode 6″](https://developer.apple.com/videos/wwdc/2014/).
