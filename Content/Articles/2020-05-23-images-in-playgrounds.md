@@ -1,10 +1,10 @@
 ---
-title: Images in Swift Playgrounds
+title: Images in Playgrounds
 date: 2020-05-23 16:30
 tags: Xcode
 ---
 
-# Images in Swift Playgrounds
+# Images in Playgrounds
 
 In Xcode playgrounds it's possible to find resources by name, instead of absolute path, to write code like this:
 
