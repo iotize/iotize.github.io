@@ -18,22 +18,22 @@ In an Xcode playground there's no obvious 'bundle' to draw from. There are no ot
 
 Fortunately, that doesn't mean images can't be referenced by name. Images must simply be added to a specific 'Resources' directory, which can be seen in the File Inspector of a playground:
 
-/1*501frW-irJK24lfoYKHVDQ.png
+![](/assets/images/2020/05/playground-image-bad-access.png)
 
 (Currently there's an error because there's no image at that location.)
 
 This Resource Path points to a location within the playground, revealing that it's actually a bundle rather than a file:
 
-/1*QEJpivsHJ3K_6emBvztPTA.png
+![](/assets/images/2020/05/playground-bundle-contents.png)
 
 Inside are one or more .swift files, some playground specific files, and an empty Resources directory.
 
 Adding an image to this directory makes it available to the playground:
 
-/1*3_Q4AV-yBoxATi5tvBNPCQ.png
+![](/assets/images/2020/05/playground-bundle-with-image.png)
 
 That's it! Now it's easy to write snippets for image manipulation or for creating custom views with decoration images to see how they look.
 
-/1*t-tgB8Gf_76x3eDw5WskIw.png
+![](/assets/images/2020/05/playground-wtih-image.png)
 
 For more information on resources in playgrounds, see [WWDC 2014 Session 401 "What's New In Xcode 6″](https://developer.apple.com/videos/wwdc/2014/).
