@@ -228,3 +228,13 @@ pre code .dotAccess {
 pre code .preprocessing {
     color: #b68a00;
 }
+
+/**
+*  Custom changes
+*/
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
