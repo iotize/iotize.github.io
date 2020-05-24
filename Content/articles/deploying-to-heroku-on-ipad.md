@@ -4,7 +4,7 @@ date: 2020-05-24 17:00
 tags: iPad
 ---
 
-# Deploying to Heroku from an iPad
+# Deploying to Heroku on an iPad
 
 In this article, I'll describe how to deploy applications to Heroku from [Working Copy](https://workingcopyapp.com/) on an iPad.
 
