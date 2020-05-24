@@ -1,6 +1,6 @@
 ---
 title: How to print a stack trace in the Xcode console
-date: 2020-05-23 20:45
+date: 2020-05-24 20:45
 tags: Xcode
 ---
 
