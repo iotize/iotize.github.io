@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>func transformSuccess&lt;Success, NewSuccess, Failure&gt;(with transform: @escaping (Success) -&gt; NewSuccess, completion: @escaping (Result&lt;NewSuccess, Failure&gt;) -&gt; Void) -&gt; (Result&lt;Success, Failure&gt;) -&gt; Void {
+    { result in
+        switch result {
+        case .success(let value):
+            let newResult = transform(value)
+            completion(.success(newResult))
+        case .failure(let error):
+            completion(.failure(error))
+        }
+    }
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 459}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>var simulateFailure = false
+
+public enum ExampleError: Error {
+    case example
+}
+
+public struct User: Codable {
+    public let email: String
+    
+    public init(email: String) {
+        self.email = email
+    }
+}
+
+public struct MarketingPreferencesService {
+    public init() {
+    }
+    
+    public func subscribe(email: String, completion: @escaping (Result&lt;Void, Error&gt;) -&gt; Void) {
+        if !simulateFailure {
+            completion(.success(Void()))
+        } else {
+            completion(.failure(ExampleError.example))
+        }
+    }
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 548}</string>
+			<key>OriginalContent</key>
+			<string>// Code inside modules can be shared between pages and other source files.
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 75}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

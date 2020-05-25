@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+import PlaygroundSupport
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+func replaceSuccess&lt;Success, NewSuccess, Failure&gt;(with newSuccess: NewSuccess, completion: @escaping (Result&lt;NewSuccess, Failure&gt;) -&gt; Void) -&gt; (Result&lt;Success, Failure&gt;) -&gt; Void {
+    { result in
+        switch result {
+            case .success:
+                completion(.success(newSuccess))
+            case .failure(let error):
+                completion(.failure(error))
+        }
+    }
+}
+
+struct RegistrationService {
+    let marketingPreferencesService: MarketingPreferencesService
+    
+    func register(email: String, password: String, subscribe: Bool, completion: @escaping (Result&lt;User, Error&gt;) -&gt; Void) {
+        // register the user
+        var user = User(email: email)
+        
+        // if the user didn't want to subscribe, return early
+        if !subscribe {
+            return completion(.success(user))
+        }
+        
+        // if the user did want to subscribe, sign 'em up
+        marketingPreferencesService.subscribe(email: email, completion: replaceSuccess(with: user, completion: completion))
+    }
+}
+
+let service = RegistrationService(marketingPreferencesService: MarketingPreferencesService())
+service.register(email: "ryan@website.com", password: "password", subscribe: true) { result in
+    switch result {
+    case .success(let user):
+        print(user)
+    case .failure(let error):
+        print(error)
+    }
+    PlaygroundPage.current.finishExecution()
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1498}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
