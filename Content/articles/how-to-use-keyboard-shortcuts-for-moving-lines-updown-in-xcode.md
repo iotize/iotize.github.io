@@ -6,7 +6,7 @@ tags: Xcode
 
 # How to use keyboard shortcuts for moving lines up/down in Xcode
 
-It's not a challenge to cut and paste or drag and drop a line of code to move it, but in the spirit of [constant, continuous improvement](https://lifehacker.com/get-better-at-getting-better-the-kaizen-productivity-p-1672205148) remembering this keyboard shortcut will save a few moments every day — and that adds up to a sizeable efficiency upgrade over the course of weeks, months, and years.
+It's not a challenge to cut and paste or drag and drop a line of code to move it, but in the spirit of [constant, continuous improvement](https://lifehacker.com/get-better-at-getting-better-the-kaizen-productivity-p-1672205148), remembering this keyboard shortcut will save a few moments every day — and that adds up to a sizeable efficiency upgrade over the course of weeks, months, and years.
 
 The shortcuts are:
 
